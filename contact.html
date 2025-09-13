@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>تواصل معنا - Hot Line</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link href="all-styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">
+          <img src="https://via.placeholder.com/120x120.png?text=Hot+Line" alt="Hot Line">
+        </div>
+        <div>
+          <h1>Hot Line</h1>
+          <small>جملة الجملة - الأردن</small>
+        </div>
+      </div>
+
+      <nav class="nav-menu" aria-label="قائمة">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">منتجاتنا</a>
+        <a href="offers.html">العروض</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="products.html" class="btn">تسوق الآن</a>
+        <button class="btn outline" id="cta-call">اتصل بنا</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="crumbs"><a href="index.html">الرئيسية</a> › <span>تواصل</span></div>
+      <h3>تواصل معنا</h3>
+      <p class="kicker">نحن هنا لمساعدتك — اترك بياناتك أو اتصل مباشرة</p>
+
+      <div class="grid contact-grid" style="margin-top:18px">
+        <div class="card">
+          <h4>اطلب عرض أسعار أو استفسار</h4>
+          <p class="muted">سريع وسهل — املأ النموذج وسنتواصل معك خلال ساعات العمل</p>
+          <form id="contact-form" style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+            <input name="name" placeholder="الاسم" required>
+            <input name="company" placeholder="اسم الشركة (إن وجد)">
+            <input name="phone" placeholder="رقم الهاتف" required>
+            <textarea name="msg" placeholder="رسالتك" rows="4"></textarea>
+            <div class="contact-form-buttons">
+              <button class="btn" type="submit">أرسل</button>
+              <button class="btn outline" type="button" onclick="alert('اتصال هاتفي: +995 591 03 51 12')">اتصل الآن</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h4>معلومات التواصل</h4>
+          <p class="muted">عمان - الأردن</p>
+          <div style="margin-top:12px">
+            <p>📞 +995 591 03 51 12</p>
+            <p>✉️ info@hotline.jo</p>
+            <p>⏱ ساعات العمل: الأحد - الخميس (9 صباحاً - 5 مساءً)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="logo"><img src="https://via.placeholder.com/110.png?text=HL" alt="logo"></div>
+            <div>
+              <h4>Hot Line</h4>
+              <small>جملة الجملة - الأردن</small>
+            </div>
+          </div>
+
+          <p style="margin-top:12px;color:#ccc">نقدم أفضل عروض الجملة للتجار والأعمال. لبناء علاقة طويلة الأمد وخدمة ممتازة.</p>
+        </div>
+
+        <div>
+          <h4>تابعنا</h4>
+          <div class="social" style="margin-top:8px">
+            <a href="#">فيسبوك</a>
+            <a href="#">انستجرام</a>
+            <a href="#">واتساب</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;color:#999;margin-top:18px">© جميع الحقوق محفوظة 2025 Hot Line</div>
+    </div>
+  </footer>
+
+  <!-- البصمة الخاصة والعناصر الإبداعية -->
+  <div class="creative-signature">📞</div>
+  <div class="floating-elements"></div>
+
+  <script>
+    // معالجة الفورم بدون باك اند — فقط عرض رسالة نجاح (يمكن توصيل API لاحقاً)
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = new FormData(this);
+      // عرض نافذة مُلائمة — في المشروع الحقيقي ترسل البيانات للباك اند
+      alert('شكراً! تم إرسال طلبك. سنعود إليك قريباً.');
+      this.reset();
+    });
+
+    // CTA
+    document.getElementById('cta-call').addEventListener('click', ()=> alert('اتصال هاتفي: +995 591 03 51 12'));
+    
+    // البصمة الخاصة - تفاعل إبداعي
+    document.querySelector('.creative-signature').addEventListener('click', function() {
+      const signatures = ['📞', '✉️', '📧', '📩', '🔔', '✨', '💫'];
+      const randomSignature = signatures[Math.floor(Math.random() * signatures.length)];
+      this.textContent = randomSignature;
+      this.style.animation = 'magic-burst 0.6s ease-in-out';
+      
+      setTimeout(() => {
+        this.style.animation = 'signature-pulse 4s ease-in-out infinite';
+      }, 600);
+    });
+  </script>
+</body>
+</html>
