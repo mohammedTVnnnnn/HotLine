@@ -1860,3 +1860,61 @@ footer h4 {
 footer p {
   color: var(--muted);
 }
+
+/* ===== Designer Signature in Footer - بصمة المصمم في الفوتر ===== */
+.footer-designer-credit {
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.footer-designer-credit a {
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-designer-credit a::before {
+  content: '✨';
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.footer-designer-credit a:hover {
+  color: var(--brand-gold);
+  transform: translateY(-1px);
+}
+
+.footer-designer-credit a:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* للهواتف المحمولة */
+@media (max-width: 768px) {
+  .footer-designer-credit {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-designer-credit {
+    font-size: 0.7rem;
+    margin-top: 4px;
+    padding: 4px 0;
+  }
+  
+  .footer-designer-credit a::before {
+    font-size: 0.6rem;
+  }
+}
